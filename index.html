@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="js/index.js"></script>
+    <title>multijib</title>
+    <link rel="stylesheet" href="themes/multijib.min.css"/>
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css"/>
+    <link rel="stylesheet" href="themes/w3.css"/>
+    <link rel="stylesheet" href="jquery.mobile.structure-1.4.5.min.css"/>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="lib/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" charset="utf-8">
+		function onLoad() {
+			document.addEventListener("deviceready", ondvr, false);
+		}
+		function ondvr() {
+			document.addEventListener("backbutton", onbb, false);
+		}
+		function onbb(){
+			lastpage = localStorage.getItem("lastpage");
+			lastpage="#"+lastpage.trim();
+			if($.mobile.activePage.is('#loading'))
+			{
+				navigator.app.exitApp();
+			}
+			if($.mobile.activePage.is('#home'))
+			{
+				navigator.app.exitApp();
+			}
+			if($.mobile.activePage.is('#menuplc'))
+			{
+				location.replace(lastpage);
+			}
+			if($.mobile.activePage.is('#singlenews'))
+			{
+				location.replace(lastpage);
+			}
+			if($.mobile.activePage.is('#newslist'))
+			{
+				location.replace("#home");
+				localStorage["lastpage"]="home";
+			}
+			if($.mobile.activePage.is('#nazarsanji'))
+			{
+				location.replace("#home");
+			}
+		}
+		
+</script>
+<script src="themes/action.js"></script>
+</head>
+<body style="direction:rtl;" onload="onLoad()">
+
+<div data-role="page" data-theme="a" id="loading" class="backload">
+</div>
+<div data-role="page" data-theme="a" id="home" class="">
+    <div data-role="header" data-position="fixed" class="headers">
+        <span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button"> Home </span>
+        <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
+        
+		<h1>WWW.RFLDL.IR</h1>
+        <span onclick="location.replace('#menuplc');"
+              class="ui-btn-right ui-btn-corner-all ui-icon-grid ui-btn-icon-notext ui-shadow" title=" Navigation "
+              data-form="ui-icon" data-role="button" role="button"> Navigation </span>
+    </div>
+    <div data-role="content" data-theme="a">
+        <div class="w3-content w3-section" style="display:none; width:100%; padding-top:-20px !important;" id="slidpart">
+            <img class="mySlides" src="" style="width:100%">
+            <img class="mySlides" src="" style="width:100%">
+        </div>
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) {
+                    myIndex = 1
+                }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 5000); // Change image every 2 seconds
+            }
+        </script>
+        <div style="width:100%;">
+            <h5 class="w3-text-green" style="font-size:14px; margin-right:15px; font-family:BTitrBold,'BTitrBold';">آخرین اخبار</h5>
+            <div style="width:100%;">
+                <table style="width:100%;" id="lastnewspart">
+
+                    <tr onclick="alert('hi');" style="border-bottom-style: solid; border-bottom-color: coral;">
+                        <td style="width:30%; vertical-align:top;"><img style="width:100%;" src="news1.jpg"></td>
+                        <td style="width:70%; vertical-align: top;">
+                            <span style="font-family:BTitrBold,'BTitrBold'; color:blue; font-size:16px;">عنوان خبر</span>
+                            <br>
+                            <span style="font-size:14px; font-family:BTitrBold,'BTitrBold'; color:black;">
+								در این قسمت عنوان مطلب قرار می گیرد....
+								در این قسمت عنوان مطلب قرار می گیرد....
+								در این قسمت عنوان مطلب قرار می گیرد....
+								در این قسمت عنوان مطلب قرار می گیرد....
+								در این قسمت عنوان مطلب قرار می گیرد....
+								</span>
+                        </td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="menuplc">
+    <div data-role="header" data-position="fixed" class="headers">
+        <span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button"> Home </span>
+        <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
+        <h1>WWW.RFLDL.IR</h1>
+        <div style="width:100%; text-align:center;">
+            <img src="flogo.png" style="width:30%;">
+        </div>
+        <br>
+    </div>
+    <div data-role="content" data-theme="a">
+
+        <div style="width:100%; padding:10px; font-size:14px; font-family:BTitrBold,'BTitrBold'; font-weight:bold; color:#686868;"
+             id="dasteha">
+            <span onclick="location.replace('#gozareshat');"><i class="fas fa-globe"></i>&nbsp;&nbsp;&nbsp;&nbsp;خبرنامه</span>
+            <hr>
+            <span><i class="fas fa-info-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;دانستنی ها</span>
+            <hr>
+            <span><i class="fas fa-play-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;کلیپ ها</span>
+            <hr>
+            <span><i class="fas fa-chart-pie"></i>&nbsp;&nbsp;&nbsp;&nbsp;نظرسنجی</span>
+            <hr>
+            <span><i class="fas fa-question-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;مارا بشناسید</span>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" data-theme="a" id="singlenews" class="">
+    <div data-role="header" data-position="fixed" class="headers">
+        <span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button"> Home </span>
+        <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
+        <h1>WWW.RFLDL.IR</h1>
+        <span onclick="location.replace('#menuplc');"
+              class="ui-btn-right ui-btn-corner-all ui-icon-grid ui-btn-icon-notext ui-shadow" title=" Navigation "
+              data-form="ui-icon" data-role="button" role="button"> Navigation </span>
+    </div>
+    <div data-role="content" data-theme="a">
+        <div style="width:100%;" id="newcontent">
+
+        </div>
+    </div>
+</div>
+
+<div data-role="page" data-theme="a" id="newslist" class="">
+    <div data-role="header" data-position="fixed" class="headers">
+        <span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button"> Home </span>
+        <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
+        <h1>WWW.RFLDL.IR</h1>
+        <span onclick="location.replace('#menuplc');"
+              class="ui-btn-right ui-btn-corner-all ui-icon-grid ui-btn-icon-notext ui-shadow" title=" Navigation "
+              data-form="ui-icon" data-role="button" role="button"> Navigation </span>
+    </div>
+    <div data-role="content" data-theme="a">
+        <table style="width:100%;" id="newscontents">
+        </table>
+    </div>
+</div>
+
+<div data-role="page" data-theme="a" id="nazarsanji" class="">
+    <div data-role="header" data-position="fixed" class="headers">
+        <span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button"> Home </span>
+        <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
+        <h1>WWW.RFLDL.IR</h1>
+        <span onclick="location.replace('#menuplc');"
+              class="ui-btn-right ui-btn-corner-all ui-icon-grid ui-btn-icon-notext ui-shadow" title=" Navigation "
+              data-form="ui-icon" data-role="button" role="button"> Navigation </span>
+    </div>
+    <div data-role="content" data-theme="a">
+        <div id="nazarsanjicontent">
+            <p style="font-family: BTitrBold,'BTitrBold';" id="titlenazarsanji">لطفا وضعیت خود را مشخص نماییدم...</p>
+            <select style="font-family:BTitrBold,'BTitrBold'; font-size:14px;	" id="itemnazarsanji">
+                <option value="0">وضعیت شما</option>
+                <option value="1">عالی</option>
+                <option value="2">خوب</option>
+            </select>
+            <br>
+            <span class="w3-btn w3-green" style="border-radius:5px; width: 100%;" onclick="addnazarsanji()">ثبت نظر</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
