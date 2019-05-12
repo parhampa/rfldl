@@ -9,10 +9,33 @@ function gotohome() {
 function dispslid()
 {
 	document.getElementById('slidpart').style.display="";
+	document.getElementById('dasteha').style.display='';
+}
+
+var sss=Math.random();
+var testSound=[];
+testSound[sss] = new Audio();
+testSound[sss].src = "loading.mp3";
+/*var clone = $(testSound).clone()[0];
+clone.play();
+clone.onended = function() {
+    $(clone).remove();   
+}*/
+function playSound () {
+    testSound[sss].play().then(response => {
+
+    }).catch(e => {
+        console.log(e);
+    })
 }
 function loading() {
-    gotohome();
-	setTimeout(dispslid, 3000);
+    //gotohome();
+	location.replace("#menuplc");
+	/*var audio = new Audio('loading.wav');
+	audio.play();*/
+	//$(".my_audio").trigger('load');
+	setTimeout(playSound,100)
+	setTimeout(dispslid, 1000);
 }
 
 
@@ -28,7 +51,12 @@ function loaddaste() {
                 myObj = JSON.parse(xmlhttp.responseText);
                 res = "";
                 for (i = 0; i < myObj.dasteha.length; i++) {
-                    res += '<span onclick="' + myObj.dasteha[i].func + '(' + "'" + myObj.dasteha[i].enname + "'" + ",'" + myObj.dasteha[i].place + "'" + ",'" + myObj.dasteha[i].locat + "'" + ')"><i class="' + myObj.dasteha[i].logo + '"></i>&nbsp;&nbsp;&nbsp;&nbsp;' + myObj.dasteha[i].name + '</span><hr>';
+					clss="w3-animate-left";
+					if(i%2==0)
+					{
+						clss="w3-animate-right";
+					}
+                    res += '<span class="'+clss+'" onclick="' + myObj.dasteha[i].func + '(' + "'" + myObj.dasteha[i].enname + "'" + ",'" + myObj.dasteha[i].place + "'" + ",'" + myObj.dasteha[i].locat + "'" + ')"><i class="' + myObj.dasteha[i].logo + '"></i>&nbsp;&nbsp;&nbsp;&nbsp;' + myObj.dasteha[i].name + '</span><hr>';
                 }
                 document.getElementById('dasteha').innerHTML = res;
 

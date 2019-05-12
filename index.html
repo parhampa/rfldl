@@ -32,11 +32,13 @@
 			}
 			if($.mobile.activePage.is('#home'))
 			{
-				navigator.app.exitApp();
+				location.replace("#menuplc");
+				//navigator.app.exitApp();
 			}
 			if($.mobile.activePage.is('#menuplc'))
 			{
-				location.replace(lastpage);
+				navigator.app.exitApp();
+				//location.replace(lastpage);
 			}
 			if($.mobile.activePage.is('#singlenews'))
 			{
@@ -44,12 +46,13 @@
 			}
 			if($.mobile.activePage.is('#newslist'))
 			{
-				location.replace("#home");
-				localStorage["lastpage"]="home";
+				location.replace("#menuplc");
+				//localStorage["lastpage"]="home";
 			}
 			if($.mobile.activePage.is('#nazarsanji'))
 			{
-				location.replace("#home");
+				location.replace("#menuplc");
+				//location.replace("#home");
 			}
 		}
 		
@@ -137,9 +140,11 @@
         <br>
     </div>
     <div data-role="content" data-theme="a">
-
-        <div style="width:100%; padding:10px; font-size:14px; font-family:BTitrBold,'BTitrBold'; font-weight:bold; color:#686868;"
-             id="dasteha">
+			<audio class="my_audio" controls preload="none" style="display:none;">
+				<source src="loading.mp3" type="audio/mpeg">
+			</audio>
+        <div style="width:100%; padding:10px; font-size:14px; font-family:BTitrBold,'BTitrBold'; font-weight:bold; color:#686868; display:none;"
+             id="dasteha" class="">
             <span onclick="location.replace('#gozareshat');"><i class="fas fa-globe"></i>&nbsp;&nbsp;&nbsp;&nbsp;خبرنامه</span>
             <hr>
             <span><i class="fas fa-info-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;دانستنی ها</span>
