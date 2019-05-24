@@ -12,6 +12,11 @@ function dispslid()
 	document.getElementById('dasteha').style.display='';
 }
 
+function playclick(){
+	var audio = new Audio('click.mp3');
+	audio.play();
+}
+
 var sss=Math.random();
 var testSound=[];
 testSound[sss] = new Audio();
@@ -56,10 +61,10 @@ function loaddaste() {
 					{
 						clss="w3-animate-right";
 					}
-                    res += '<span class="'+clss+'" onclick="' + myObj.dasteha[i].func + '(' + "'" + myObj.dasteha[i].enname + "'" + ",'" + myObj.dasteha[i].place + "'" + ",'" + myObj.dasteha[i].locat + "'" + ')"><i class="' + myObj.dasteha[i].logo + '"></i>&nbsp;&nbsp;&nbsp;&nbsp;' + myObj.dasteha[i].name + '</span><hr>';
+                    res += '<span class="'+clss+'" onclick="playclick(); ' + myObj.dasteha[i].func + '(' + "'" + myObj.dasteha[i].enname + "'" + ",'" + myObj.dasteha[i].place + "'" + ",'" + myObj.dasteha[i].locat + "'" + ')"><i style="font-size:20px;" class="' + myObj.dasteha[i].logo + '"></i>&nbsp;&nbsp;&nbsp;&nbsp;' + myObj.dasteha[i].name + '</span><hr>';
                 }
                 document.getElementById('dasteha').innerHTML = res;
-
+				onLoad();
                 setTimeout(loading, 5000);
             }
         };

@@ -61,8 +61,25 @@
 </head>
 <body style="direction:rtl;" onload="onLoad()">
 
-<div data-role="page" data-theme="a" id="loading" class="backload">
+<div data-role="page" id="loading" class="backload" style="text-align:center;">
+	<div>
+	<br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br>
+	<br>
+		<img src="loading.gif" id="loadinggif" style="width:100%;">
+	</div>
 </div>
+<script>
+		/*function showloadgif()
+		{
+			itemh=document.getElementById('loadinggif').clientHeight;
+			pageh=document.getElementById('loading').clientHeight;
+			margtop=pageh-itemh;
+			document.getElementById('loadinggif').style.marginTop=margtop+"px";
+		}
+		setTimeout(showloadgif, 300);*/
+</script>
 <div data-role="page" data-theme="a" id="home" class="">
     <div data-role="header" data-position="fixed" class="headers">
         <span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
