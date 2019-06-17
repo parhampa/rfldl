@@ -5,6 +5,7 @@ function gotohome() {
 	onLoad();
     location.replace("#home");
 	localStorage["lastpage"]="home";
+	playclick();
 }
 function dispslid()
 {
@@ -35,6 +36,8 @@ function playSound () {
 }
 function loading() {
     //gotohome();
+	document.getElementById('myprogress').style.width = "100%";
+	document.getElementById('myprogress').innerHTML = "100%";
 	location.replace("#menuplc");
 	/*var audio = new Audio('loading.wav');
 	audio.play();*/
@@ -106,6 +109,7 @@ function loadpg(id) {
                 res = xmlhttp.responseText;
                 document.getElementById('newcontent').innerHTML = res;
                 location.replace('#singlenews');
+				playclick();
             }
         };
         xmlhttp.open("GET", url, true);
@@ -240,3 +244,15 @@ function addnazarsanji() {
         }
     }
 }
+var widthprog = 0;
+		var myVar = setInterval(function(){
+			widthprog = widthprog + 10;
+			var width = document.getElementById('myprogress').width;
+			var widper = widthprog.toString()+"%";
+			document.getElementById('myprogress').style.width = widper;
+			document.getElementById('myprogress').innerHTML = widper;
+			if(widthprog==100)
+			{
+				clearInterval(myVar);
+			}
+		},1000);

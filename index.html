@@ -54,6 +54,7 @@
 				location.replace("#menuplc");
 				//location.replace("#home");
 			}
+			playclick();
 		}
 		
 </script>
@@ -62,12 +63,29 @@
 <body style="direction:rtl;" onload="onLoad()">
 
 <div data-role="page" id="loading" class="backload" style="text-align:center;">
-	<div>
+	<!--<div>
 	<br><br><br><br>
 	<br><br><br><br>
 	<br><br><br><br>
 	<br>
 		<img src="loading.gif" id="loadinggif" style="width:100%;">
+	</div>-->
+	<style>
+	.footer {
+	  position: fixed;
+	  left: 0;
+	  bottom: 0;
+	  width: 95%;
+	  margin-left:2.5%;
+	  color: white;
+	  text-align: center;
+	}
+	</style>
+	<div class="footer">
+	  <div class="w3-light-grey w3-round-large" style="height:40px;">
+		<div class="w3-container w3-blue w3-round-large" id="myprogress" style="width:0%; height:40px; padding-top:8px;">0%</div>
+	  </div>
+	  <br>
 	</div>
 </div>
 <script>
@@ -82,13 +100,14 @@
 </script>
 <div data-role="page" data-theme="a" id="home" class="">
     <div data-role="header" data-position="fixed" class="headers">
-        <span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
+	<span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
               title="Home" data-form="ui-icon" data-role="button" role="button"> Home </span>
-        <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
-              title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
+        <!--<span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button"> Home </span>-->
+        
         
 		<h1>WWW.RFLDL.IR</h1>
-        <span onclick="location.replace('#menuplc');"
+        <span onclick="location.replace('#menuplc'); playclick();"
               class="ui-btn-right ui-btn-corner-all ui-icon-grid ui-btn-icon-notext ui-shadow" title=" Navigation "
               data-form="ui-icon" data-role="button" role="button"> Navigation </span>
     </div>
@@ -148,8 +167,8 @@
     <div data-role="header" data-position="fixed" class="headers">
         <span onclick="gotohome();" class="ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-shadow"
               title="Home" data-form="ui-icon" data-role="button" role="button"> Home </span>
-        <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
-              title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
+        <!--<span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
+              title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>-->
         <h1>WWW.RFLDL.IR</h1>
         <div style="width:100%; text-align:center;">
             <img src="flogo.png" style="width:30%;">
@@ -183,7 +202,7 @@
         <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
               title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
         <h1>WWW.RFLDL.IR</h1>
-        <span onclick="location.replace('#menuplc');"
+        <span onclick="location.replace('#menuplc'); playclick();"
               class="ui-btn-right ui-btn-corner-all ui-icon-grid ui-btn-icon-notext ui-shadow" title=" Navigation "
               data-form="ui-icon" data-role="button" role="button"> Navigation </span>
     </div>
@@ -201,7 +220,7 @@
         <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
               title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
         <h1>WWW.RFLDL.IR</h1>
-        <span onclick="location.replace('#menuplc');"
+        <span onclick="location.replace('#menuplc'); playclick();"
               class="ui-btn-right ui-btn-corner-all ui-icon-grid ui-btn-icon-notext ui-shadow" title=" Navigation "
               data-form="ui-icon" data-role="button" role="button"> Navigation </span>
     </div>
@@ -218,7 +237,7 @@
         <span onclick="onbb();" class="ui-btn-left ui-btn-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-shadow"
               title="Home" data-form="ui-icon" data-role="button" role="button" style="margin-left:50px;"> Home </span>
         <h1>WWW.RFLDL.IR</h1>
-        <span onclick="location.replace('#menuplc');"
+        <span onclick="location.replace('#menuplc'); playclick();"
               class="ui-btn-right ui-btn-corner-all ui-icon-grid ui-btn-icon-notext ui-shadow" title=" Navigation "
               data-form="ui-icon" data-role="button" role="button"> Navigation </span>
     </div>
